@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/normalize.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#container{
+			width: 360px;
+			height: 300px;
+			margin: 10px 5px;
+			/*border: 1px solid #ccc;*/
+		}
+	</style>
+</head>
+<body>
+	<div style="overflow-x: hidden;">
+		<table style="width: 800px;">
+		  <thead>
+		    <tr>
+		      <th>Firstname</th>
+		      <th>Lastname</th>
+		      <th>Email</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>John</td>
+		      <td>Doe</td>
+		      <td>john@example.com</td>
+		    </tr>
+		    <tr>
+		      <td>Mary</td>
+		      <td>Moe</td>
+		      <td>mary@example.com</td>
+		    </tr>
+		    <tr>
+		      <td>July</td>
+		      <td>Dooley</td>
+		      <td>july@example.com</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+
+	<h2>Button元素的设计</h2>
+	<button type="button" class="button">Default</button>
+	<button type="button" class="button secondary">Secondary</button>
+	<button type="button" class="button success">Success</button>
+	<button type="button" class="button info">Info</button>
+	<button type="button" class="button warning">Warning</button>
+	<button type="button" class="button alert">Alert</button>
+
+	<a href="#" class="button info">Link Button1</a>
+	<a href="#" class="button success">Link Button2</a>
+	<input type="submit" name="submitmsg" class="button warning" value="submit button">
+
+	<input type="button" name="submitmsg" class="button alert small" value="button-alert">
+	<input type="button" name="submitmsg" class="button success large" value="button-success">
+	<input type="button" name="submitmsg" class="button info tiny" value="button-info">
+
+	<input type="button" name="submitmsg" class="button info radius" value="button-info">
+	<input type="button" name="submitmsg" class="button info round" value="button-info">
+
+	<input type="button" name="submitmsg" class="button info round expand" value="button-info">
+
+	<input type="button" name="submitmsg" class="button disabled" value="button-info">
+
+	<ul class="button-group">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group stack" style="margin: 20px;">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group stack-for-small">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group radius">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group round">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group even-3">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	</ul>
+
+	<ul class="button-group even-5">
+	  <li><button type="button" class="button">Apple</button></li>
+	  <li><button type="button" class="button">Samsung</button></li>
+	  <li><button type="button" class="button">Sony</button></li>
+	  <li><button type="button" class="button">HTC</button></li>
+	  <li><button type="button" class="button">Huawei</button></li>
+	</ul>
+
+	<ul class="button-group even-8">
+	  <li><button type="button" class="button">A</button></li>
+	  <li><button type="button" class="button">B</button></li>
+	  <li><button type="button" class="button">C</button></li>
+	  <li><button type="button" class="button">D</button></li>
+	  <li><button type="button" class="button">E</button></li>
+	  <li><button type="button" class="button">F</button></li>
+	  <li><button type="button" class="button">G</button></li>
+	  <li><button type="button" class="button">H</button></li>
+	</ul>
+
+
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+    <!-- <script src="js/vendor/fastclick.js"></script> -->
+    <script src="js/vendor/modernizr.js"></script>
+    <!-- <script src="js/vendor/jquery.cookie.js"></script> -->
+    <!-- <script src="js/vendor/placeholder.js"></script> -->
+    <script src="js/foundation.min.js"></script>
+</body>
+</html>

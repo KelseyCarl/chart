@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" href="css/foundation.css"> -->
+
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/foundation/5.5.3/css/foundation.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/foundation.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+</head>
+<body>
+	<!-- Trigger the dropdown -->
+	<a href="#" data-dropdown="id01" class="button dropdown">Dropdown Button</a>
+	<ul id="id01" data-dropdown-content class="f-dropdown">
+	    <li><a href="#">Link 1</a></li>
+	    <li><a href="#">Link 2</a></li>
+	    <li><a href="#">Link 3</a></li>
+	</ul>
+
+	<a href="#" class="button split">Dropdown Button<span data-dropdown="id01"></span></a>
+    <ul id="id01" data-dropdown-content class="f-dropdown">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+
+	<!-- Initialize Foundation JS -->
+	<script>
+	$(document).ready(function() {
+	    $(document).foundation();
+	})
+	</script>
+
+	<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+    <!-- <script src="js/vendor/fastclick.js"></script> -->
+    <!-- <script src="js/vendor/modernizr.js"></script> -->
+    <!-- <script src="js/vendor/jquery.cookie.js"></script> -->
+    <!-- <script src="js/vendor/placeholder.js"></script> -->
+    <!-- <script src="js/foundation.min.js"></script> -->
+</body>
+</html>
