@@ -17,13 +17,45 @@
 		</script>
 	</div>
 
+	<table>
+		<tbody id="dataTemplate">
+		</tbody>
+	</table>
+
+	<script type="text/x-jsrender" id="xrTemplate">
+		<tr>
+			<td>
+				<ul>
+					{{for person}}
+					<li>
+						{{:name}}
+						{{if nickname && nickname !== name}}
+							{{:nickname}}
+						{{/if}}
+					</li>
+					{{/for}}
+				</ul>
+			</td>
+		</tr>
+	</script>
+
 	<script type="text/javascript">
 		// var person = {"name":"Android"};//传单个元素
-		var person = [{"name":"Android"},{"name":"KelseyCarl"}];//传入数组元素，自动进行遍历
+		// var person = [{"name":"Android"},{"name":"KelseyCarl"}];//传入数组元素，自动进行遍历
+		var person = [  //传入数组元素，for循环遍历
+			{"name":"Android","nickname":"Android"},
+			{"name":"KelseyCarl","nickname":"little girl"}
+		];
+		var app = {
+			person:person
+		}
 
 		$(document).ready(function(){
-			var addData = $("#myTemplate").render(person);
-			$("#addDatahere").append(addData);
+			// var addData = $("#myTemplate").render(person);
+			// $("#addDatahere").append(addData);
+
+			var data = $("#xrTemplate").render(app);
+			$("#dataTemplate").append(data);
 		})
 	</script>
 </body>

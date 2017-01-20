@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsrender1</title>
+	<style type="text/css">
+		table{
+			margin: 0 auto;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/normalize.css">
+	<script src="js/render/jquery-1.7.2.min.js"></script>
+	<script src="js/render/jsrender.js"></script>
+</head>
+<body>
+
+	<table>
+		<thead>
+		  <tr><th>Synopsis</th><th>Fixed Template</th>
+		  <th>Template specified in data</th><th>Conditional Template</th>
+		  <th>Wrapper Template</th><th>Repeating Wrapper Template</th></tr>
+		</thead>
+	<tbody id="tableTemplate"></tbody>
+	</table>
+
+	<script type="text/x-jsrender" id="movieTemplate">
+		<tr>
+			{{include tmpl="#headerTemplate" /}}
+				<td>
+					{{for language tmpl="#columnTemplate" /}}
+				</td>
+				<td>
+					{{for language tmpl=tmpl /}}
+				</td>
+				<td>
+					{{for language tmpl="#conditionalTemplate" /}}
+				</td>
+				{{include tmpl="#sectionTemplate"}}
+					{{>title}}
+				{{/include}}
+				<td>
+					{{for language tmpl="#wrapperTemplate"}}
+						<b>{{>name}}</b>
+					{{/for}}
+				</td>			
+		</tr>
+	</script>
+
+	<script type="text/x-jsrender" id="headerTemplate">
+		<td>{{>title}}</td>
+	</script>
+
+	<script type="text/x-jsrender" id="sectionTemplate">
+		<td>{{>title}}</td>
+	</script>
+
+	<script id="columnTemplate" type="text/x-jsrender">
+	  <div>
+	    <em>{{>name}}</em>
+	  </div>
+	</script>
+
+	<script id="rowTemplate" type="text/x-jsrender">
+	  <span>
+	    <b>{{>name}}</b>
+	  </span>
+	</script>
+
+	<script id="conditionalTemplate" type="text/x-jsrender">
+	  {{if name.charAt(0)==='E' tmpl='#rowTemplate'}}
+	  {{else tmpl='#columnTemplate'}}
+	  {{/if}}
+	</script>
+
+	<script id="wrapperTemplate" type="text/x-jsrender">
+	  <div>
+	    {{:#index}}:
+	    {{include tmpl=#content/}}
+	  </div>
+	</script>
+
+	<script type="text/javascript">
+		var movies = [
+		    {
+		        "title": "Meet Joe Black",
+		        "language": [
+		            {
+		                "name": "English"
+		            },
+		            {
+		                "name": "French"
+		            }
+		        ],
+		        "tmpl": "#columnTemplate"
+		    },
+		    {
+		        "title": "Uncle Tom's Cabin",
+		        "language": [
+		            {
+		                "name": "German"
+		            },
+		            {
+		                "name": "Russian"
+		            },
+		            {
+		                "name": "Spanish"
+		            }
+		        ],
+		        "tmpl": "#rowTemplate"
+		    },
+		    {
+		        "title": "The Inheritance",
+		        "language": [
+		            {
+		                "name": "English"
+		            },
+		            {
+		                "name": "German"
+		            }
+		        ],
+		        "tmpl": "#columnTemplate"
+		    }
+		];
+		$(document).ready(function(){
+			var datas = $("#movieTemplate").render(movies);
+			$("#tableTemplate").append(datas);
+		});
+	</script>
+</body>
+</html>
