@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- <link rel="stylesheet" href="css/foundation-icons.css"> -->
+    <link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#container{
+			width: 360px;
+			height: 300px;
+			margin: 10px 5px;
+			/*border: 1px solid #ccc;*/
+		}
+	</style>
+</head>
+<body>
+	<p>Cloud icon: <i class="fi-cloud"></i></p>
+	<p>Cloud icon as a link:
+	  <a href="#"><i class="fi-cloud"></i></a>
+	</p>
+
+	<p>Styled Cloud icon: <i class="fi-cloud" style="font-size:35px;color:red;"></i></p>
+	<p>Home icon: <i class="fi-home"></i></p>
+	<p>Home icon on a button:
+	  <button type="button" class="button">
+	    <i class="fi-home"></i> Home
+	  </button>
+	</p>
+	<p>Home icon on a green button:
+	  <button type="button" class="button success">
+	    <i class="fi-home"></i> Home
+	  </button>
+	</p>
+	<p>Home icon on a large, light blue link button:
+	  <a href="#" class="button info large">
+	    <i class="fi-home"></i> Home
+	  </a>
+	</p>
+
+	<div class="icon-bar five-up">
+	  <a href="#" class="item">
+	    <i class="fi-home"></i>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-bookmark"></i>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-info"></i>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-mail"></i>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-like"></i>
+	  </a>
+	</div>
+
+	<div class="icon-bar vertical five-up">
+	  <a href="#" class="item">
+	    <i class="fi-home"></i>
+	    <label>Home</label>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-share"></i>
+	    <label>Share</label>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-info"></i>
+	    <label>Info</label>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-mail"></i>
+	    <label>Mail</label>
+	  </a>
+	  <a href="#" class="item">
+	    <i class="fi-magnifying-glass"></i>
+	    <label>Search</label>
+	  </a>
+	</div>
+
+	<a href="#" class="item disabled">
+	  <i class="fi-share"></i>
+	</a>
+
+	<a href="#" class="item disabled">
+	    <i class="fi-mail"></i>
+	</a>
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+</html>
