@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsrender1</title>
+	<style type="text/css">
+	</style>
+	<script src="js/render/jquery-1.7.2.min.js"></script>
+	<script src="js/render/jsrender.js"></script>
+</head>
+<body>
+	<div id="addDatahere">
+		<script id="myTemplate" type="text/x-jsrender">
+			<div>
+				<label>Name:</label>{{>name}}
+			</div>
+		</script>
+	</div>
+
+	<script type="text/javascript">
+		// var person = {"name":"Android"};//传单个元素
+		var person = [{"name":"Android"},{"name":"KelseyCarl"}];//传入数组元素，自动进行遍历
+
+		$(document).ready(function(){
+			var addData = $("#myTemplate").render(person);
+			$("#addDatahere").append(addData);
+		})
+	</script>
+</body>
+</html>
