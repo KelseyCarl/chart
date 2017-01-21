@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>蔬菜含水量变化图</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/async.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#water{
+			width: 395px;
+			height: 300px; 
+			margin: 0 auto;
+			/*border: 1px solid #ccc;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="temperature">
+		
+	</div>
+	<div id="water">
+	
+	</div>
+
+	<script language="JavaScript">
+		$(document).ready(function() {
+			var chart = {
+				plotBackgroundColor:null,
+				plotBorderWidth:null,
+				plotShadow:false
+			}
+		   var title = {
+		      text: '1~6月蔬菜含水比例'   
+		   };
+		   var subtitle = {
+		      text: 'Source:www.baidu.com'   
+		   };
+		   var tooltip = {
+		   		pointFormat:'{series.name}:<b>{point.percentage:.1f}%</b>'
+		   };
+		   var plotOptions = {
+		   		pie:{
+		   			allowPointSelect:true,
+		   			cursor:'pointer',
+		   			dataLabels:{
+		   				enabled:true,
+		   				format:'<b>{point.name}%</b>:{point.percentage:.1f} %',
+		   				style:{
+		   					color:(Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		   				}
+		   			}
+		   		}
+		   };
+		   var series = [
+			   {
+			   		type:'pie',
+			   		name:'Water change',
+			   		data:[
+			   			['一月',45.0],
+			   			['二月',26.8],
+			   			{
+			   				name:'三月',
+			   				y:12.8,
+			   				sliced:true,
+			   				selected:true
+			   			},
+			   			['四月',8.5],
+			   			['五月',6.2],
+			   			['六月',0.7]
+			   		]
+			   }
+		   ];
+
+		   var json = {};
+		   
+		   json.chart = chart;
+		   json.title = title;
+		   json.subtitle = subtitle;
+		   json.tooltip = tooltip;
+		   json.series = series;
+		   json.plotOptions = plotOptions;
+
+		   $('#water').highcharts(json); 
+
+		   var title2 = {
+		       text: '1~6月平均气温'   
+		   };
+		   var subtitle2 = {
+		        text: 'Source: baidu.com'
+		   };
+		   var xAxis = {
+		       categories: ['一月', '二月', '三月', '四月', '五月', '六月']
+		   };
+		   var yAxis = {
+		      title: {
+		         text: 'Temperature (\xB0C)'
+		      },
+		      plot: [{
+		         value: 0,
+		         width: 1,
+		         color: '#808080'
+		      }]
+		   };   
+		   var tip = {
+		      Suffix: '\xB0C'
+		   }
+		   //配置图表向右对齐
+		   var legend = {
+		      layout: 'vertical',
+		      align: 'right',
+		      verticalAlign: 'middle',
+		      borderWidth: 0
+		   };
+		   //配置图表要展示的数据
+		   var datas =  [
+		      {
+		         name: '白菜',
+		         data: [4.5, 10.2, 14.5, 18.2,
+		            26.5, 23.3]
+		      }, 
+		      {
+		         name: '萝卜',
+		         data: [-0.2, 0.8, 5.7, 15.0, 13.8,
+		            24.1]
+		      },
+		      {
+		         name: '推荐温度',
+		         data: [5.3,6.2, 5.7, 10.0, 12.8,
+		            24.1]
+		      }
+		   ];
+
+		   var data = {};
+
+		   data.title = title2;
+		   data.subtitle = subtitle2;
+		   data.xAxis = xAxis;
+		   data.yAxis = yAxis;
+		   data.tip = tip;
+		   data.legend = legend;
+		   data.series = datas;
+		   
+		   $('#temperature').highcharts(data); 
+		});
+	</script>
+</body>
+</html>
