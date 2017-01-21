@@ -20,13 +20,16 @@ $(document).ready(function() {
    var yAxis = {
       title: {
          text: 'Temperature (\xB0C)'
-      },
-      plot: [{
-         value: 0,
-         width: 1,
-         color: '#808080'
-      }]
-   };   
+      }
+   };  
+   var plotOptions = {
+      line:{
+         dataLabels:{
+            enabled:true
+         },
+         enableMouseTracking:false
+      }
+   } 
    //配置提示信息
    var tip = {
       Suffix: '\xB0C'
@@ -40,16 +43,6 @@ $(document).ready(function() {
    };
    //配置图表要展示的数据
    var datas =  [
-      {
-         name: 'Tokyo',
-         data: [14.5, 18.2, 21.5, 25.2,
-            26.5, 23.3]
-      }, 
-      {
-         name: 'New York',
-         data: [-0.2, 0.8, 5.7, 22.0, 24.8,
-            24.1]
-      }, 
       {
          name: 'Berlin',
          data: [-0.9, 0.6, 3.5, 8.4, 3.9, 1.0]
@@ -68,11 +61,11 @@ $(document).ready(function() {
    json.subtitle = subtitle;
    json.xAxis = xAxis;
    json.yAxis = yAxis;
-   json.tip = tip;
+   json.plotOptions = plotOptions;
+   json.tip = tip;   
    json.legend = legend;
    json.series = datas;
 
    //绘制图表
    $('#container').highcharts(json);
-   $('#test').highcharts(json);
 });
